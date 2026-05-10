@@ -60,6 +60,12 @@ clientes-fullstack-jr/
 
 ---
 
+## 📸 Preview
+
+![Tela do sistema](assets/screenshot.png)
+
+---
+
 ## 🚀 Como Executar
 
 ### Backend
@@ -95,4 +101,4 @@ ng serve
 
 ## 👤 Autor
 
-**Rômulo Ribeiro** — Desenvolvedor Júnior
+**Rômulo Ribeiro** 
