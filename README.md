@@ -46,6 +46,7 @@ A aplicação segue o padrão MVC em camadas:
 
 ```mermaid
 classDiagram
+    direction TB
     ClienteController --> ClienteService
     ClienteService --> ClienteRepository
     ClienteRepository --> Cliente
@@ -58,21 +59,21 @@ classDiagram
     }
 
     class ClienteRepository {
-        +findAll()
-        +save(cliente)
-        +deleteById(id)
+        +findAll() List
+        +save(cliente) Cliente
+        +deleteById(id) void
     }
 
     class ClienteService {
-        +listar()
-        +salvar(cliente)
-        +deletar(id)
+        +listar() List
+        +salvar(cliente) Cliente
+        +deletar(id) void
     }
 
     class ClienteController {
-        +listar()
-        +salvar(cliente)
-        +deletar(id)
+        +listar() List
+        +salvar(cliente) Cliente
+        +deletar(id) void
     }
 ```
 
