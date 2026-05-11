@@ -13,13 +13,15 @@ Gerenciar operações de CRUD de clientes, garantindo persistência de dados e c
 ## 🛠️ Stack Tecnológica
 
 ### Backend (Java)
-- **Linguagem:** Java 17
+
+- **Linguagem:** Java 25
 - **Framework:** Spring Boot + Spring Web
 - **Persistência:** Spring Data JPA + Hibernate
 - **Banco de Dados:** H2 (em memória)
 - **Gerenciador:** Maven
 
 ### Frontend (Angular)
+
 - **Framework:** Angular
 - **Linguagem:** TypeScript
 - **Comunicação:** HttpClient (REST)
@@ -32,7 +34,7 @@ Gerenciar operações de CRUD de clientes, garantindo persistência de dados e c
 A aplicação segue o padrão MVC em camadas:
 
 | Camada | Responsabilidade |
-|--------|-----------------|
+|---|---|
 | Controller | Endpoints REST e entrada de requisições |
 | Service | Regras de negócio |
 | Repository | Comunicação com o banco via JPA |
@@ -40,10 +42,46 @@ A aplicação segue o padrão MVC em camadas:
 
 ---
 
+## 📐 Modelagem UML
+
+```mermaid
+classDiagram
+    ClienteController --> ClienteService
+    ClienteService --> ClienteRepository
+    ClienteRepository --> Cliente
+
+    class Cliente {
+        -Long id
+        -String nome
+        -String email
+        -String telefone
+    }
+
+    class ClienteRepository {
+        +findAll()
+        +save(cliente)
+        +deleteById(id)
+    }
+
+    class ClienteService {
+        +listar()
+        +salvar(cliente)
+        +deletar(id)
+    }
+
+    class ClienteController {
+        +listar()
+        +salvar(cliente)
+        +deletar(id)
+    }
+```
+
+---
+
 ## 🔌 Endpoints da API
 
 | Ação | Método | Endpoint |
-|------|--------|----------|
+|---|---|---|
 | Listar todos os clientes | `GET` | `/clientes` |
 | Cadastrar novo cliente | `POST` | `/clientes` |
 | Remover cliente por ID | `DELETE` | `/clientes/{id}` |
@@ -101,4 +139,4 @@ ng serve
 
 ## 👤 Autor
 
-**Rômulo Ribeiro** 
+**Rômulo Ribeiro**
