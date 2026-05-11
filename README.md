@@ -44,38 +44,7 @@ A aplicação segue o padrão MVC em camadas:
 
 ## 📐 Modelagem UML
 
-```mermaid
-classDiagram
-    direction TB
-    ClienteController --> ClienteService
-    ClienteService --> ClienteRepository
-    ClienteRepository --> Cliente
-
-    class Cliente {
-        -Long id
-        -String nome
-        -String email
-        -String telefone
-    }
-
-    class ClienteRepository {
-        +findAll() List
-        +save(cliente) Cliente
-        +deleteById(id) void
-    }
-
-    class ClienteService {
-        +listar() List
-        +salvar(cliente) Cliente
-        +deletar(id) void
-    }
-
-    class ClienteController {
-        +listar() List
-        +salvar(cliente) Cliente
-        +deletar(id) void
-    }
-```
+![Modelagem UML](assets/uml.png)
 ---
 
 ## 🔌 Endpoints da API
