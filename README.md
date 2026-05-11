@@ -76,7 +76,6 @@ classDiagram
         +deletar(id) void
     }
 ```
-
 ---
 
 ## 🔌 Endpoints da API
