@@ -1,0 +1,54 @@
+package com.romulo.clientesapi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import com.romulo.clientesapi.model.Cliente;
+import com.romulo.clientesapi.service.ClienteService;
+
+/**
+ * Controller REST responsável por expor os endpoints da API de clientes.
+ * Todas as rotas partem da base: /clientes
+ */
+@RestController
+@RequestMapping("/clientes")
+@CrossOrigin("*")
+public class ClienteController {
+
+    @Autowired
+    private ClienteService service;
+
+    /**
+     * GET /clientes
+     * Retorna a lista de todos os clientes cadastrados.
+     *
+     * @return lista de clientes
+     */
+    @GetMapping
+    public List<Cliente> listar() {
+        return service.listar();
+    }
+
+    /**
+     * POST /clientes
+     * Cadastra um novo cliente recebido no corpo da requisição.
+     *
+     * @param cliente objeto Cliente no formato JSON
+     * @return cliente salvo com ID gerado
+     */
+    @PostMapping
+    public Cliente salvar(@RequestBody Cliente cliente) {
+        return service.salvar(cliente);
+    }
+
+    /**
+     * DELETE /clientes/{id}
+     * Remove um cliente pelo ID informado na URL.
+     *
+     * @param id identificador do cliente a ser removido
+     */
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        service.deletar(id);
+    }
+}

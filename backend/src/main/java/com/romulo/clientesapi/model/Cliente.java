@@ -1,17 +1,26 @@
-
 package com.romulo.clientesapi.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Entidade que representa um cliente no sistema.
+ * Mapeada automaticamente para a tabela "cliente" no banco de dados via JPA.
+ */
 @Entity
 public class Cliente {
 
+    /** Identificador único do cliente, gerado automaticamente pelo banco. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /** Nome completo do cliente. */
     private String nome;
+
+    /** Endereço de e-mail do cliente. */
     private String email;
+
+    /** Número de telefone do cliente. */
     private String telefone;
 
     public Long getId() {
