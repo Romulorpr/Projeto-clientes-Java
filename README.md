@@ -42,11 +42,6 @@ A aplicação segue o padrão MVC em camadas:
 
 ---
 
-## 📐 Modelagem UML
-
-![Modelagem UML](assets/uml.png)
----
-
 ## 🔌 Endpoints da API
 
 | Ação | Método | Endpoint |
