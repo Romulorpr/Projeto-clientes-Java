@@ -1,0 +1,39 @@
+# Maven / Java build output
+**/target/
+**/bin/
+*.class
+
+# Eclipse workspace and project metadata
+.metadata/
+**/.metadata/
+.project
+.classpath
+.settings/
+.factorypath
+
+# Node / Angular
+**/node_modules/
+**/dist/
+**/.angular/
+**/coverage/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE local files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+!.env.example
